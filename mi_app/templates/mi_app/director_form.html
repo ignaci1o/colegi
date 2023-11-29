@@ -1,0 +1,13 @@
+<!-- mi_app/templates/mi_app/director_form.html -->
+{% extends 'mi_app/base.html' %}
+
+{% block title %}Formulario de Director{% endblock %}
+
+{% block content %}
+  <h2>Formulario de Director</h2>
+  <form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+{% endblock %}

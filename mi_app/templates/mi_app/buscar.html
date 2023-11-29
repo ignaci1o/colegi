@@ -1,0 +1,13 @@
+<!-- mi_app/templates/mi_app/buscar.html -->
+{% extends 'mi_app/base.html' %}
+
+{% block title %}Búsqueda{% endblock %}
+
+{% block content %}
+  <h2>Búsqueda</h2>
+  <form method="get" action="{% url 'buscar' %}">
+    <!-- Agrega aquí los campos del formulario de búsqueda -->
+    <input type="text" name="query" placeholder="Buscar...">
+    <button type="submit">Buscar</button>
+  </form>
+{% endblock %}

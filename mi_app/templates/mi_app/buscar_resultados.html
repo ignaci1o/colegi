@@ -1,0 +1,36 @@
+<form method="get" action="{% url 'buscar' %}">
+  {{ form.as_p }}
+  <button type="submit">Buscar</button>
+</form>
+
+{% if resultados %}
+  <h2>Resultados de la búsqueda:</h2>
+
+  {% if resultados.profesores %}
+    <h3>Profesores:</h3>
+    <ul>
+      {% for profesor in resultados.profesores %}
+        <li>{{ profesor.nombre }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if resultados.directores %}
+    <h3>Directores:</h3>
+    <ul>
+      {% for director in resultados.directores %}
+        <li>{{ director.nombre }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if resultados.alumnos %}
+    <h3>Alumnos:</h3>
+    <ul>
+      {% for alumno in resultados.alumnos %}
+        <li>{{ alumno.nombre }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+{% endif %}

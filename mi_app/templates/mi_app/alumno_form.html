@@ -1,0 +1,13 @@
+<!-- mi_app/templates/mi_app/alumno_form.html -->
+{% extends 'mi_app/base.html' %}
+
+{% block title %}Formulario de Alumno{% endblock %}
+
+{% block content %}
+  <h2>Formulario de Alumno</h2>
+  <form method="post" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+  </form>
+{% endblock %}
